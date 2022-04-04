@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, useNavigate} from 'react-router-dom'
+import Layout from './Layout/Layout';
+import Home from './pages/Home';
+import SpendingPage from './pages/SpendingPage';
+import { useEffect } from 'react';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="spending">
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/spendings" element={<SpendingPage />} />
+        </Routes>
+      </Layout>
     </div>
-  );
+  )
 }
 
 export default App;
